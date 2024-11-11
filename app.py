@@ -41,7 +41,7 @@ def perform_ner(text):
     return entities
 
 # Streamlit UI
-st.title("AI Avatar Text Generator")
+st.title("AI Text Generator")
 
 uploaded_file = st.file_uploader("Upload a .pdf or .docx file", type=["pdf", "docx"])
 
@@ -69,8 +69,8 @@ if uploaded_file is not None:
     st.write(f"Dates: {', '.join(entities['dates'])}")
     st.write(f"Organizations: {', '.join(entities['organizations'])}")
 
-    # Generate summary for AI Avatar
-    st.subheader("Generated Summary for AI Avatar")
+    # Generate summary
+    st.subheader("Generated Summary for the uploaded file")
     summary = f"The story revolves around {', '.join(entities['characters'])}"
     if entities['locations']:
         summary += f" in locations like {', '.join(entities['locations'])}."
